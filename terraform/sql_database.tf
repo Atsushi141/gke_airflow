@@ -22,8 +22,13 @@ resource "google_sql_database_instance" "airflow" {
 }
 
 
-resource "google_sql_user" "user" {
+resource "google_sql_user" "airflow" {
   name     = "admin"
   instance = google_sql_database_instance.airflow.name
   password = var.cloud_sql_password
+}
+
+resource "google_sql_database" "airflow" {
+  name     = "airflow"
+  instance = google_sql_database_instance.airflow.name
 }

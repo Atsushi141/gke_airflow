@@ -5,8 +5,11 @@ terraform {
 }
 
 variable "project" {
-  type = string
+  type    = string
+  default = "gke-airflow-cluster"
 }
+
+# data "google_client_config" "current" {}
 
 provider "google" {
   project = var.project
