@@ -1,0 +1,13 @@
+webserver:
+  service:
+    type: LoadBalancer
+postgresql:
+  enabled: false
+data:
+  metadataConnection:
+    user: ${dbUser}
+    pass: ${dbPass}
+    protocol: postgresql
+    host: ${dbHost}
+    port: 5432
+    db: ${dbDatabase}
