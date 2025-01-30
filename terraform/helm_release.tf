@@ -26,6 +26,5 @@ resource "helm_release" "airflow" {
 
   depends_on = [
     google_container_cluster.airflow,
-    kubernetes_persistent_volume_claim.airflow
   ]
 }
